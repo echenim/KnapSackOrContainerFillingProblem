@@ -1,12 +1,29 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace KnapsackProblem
 {
     internal class Program
     {
+        private static readonly int capacity = 100;
+
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var items = new[]
+            {
+                new Items {Value = 60, Weight = 10},
+                new Items {Value = 100, Weight = 20},
+                new Items {Value = 120, Weight = 30},
+                new Items {Value = 140, Weight = 40},
+                new Items {Value = 160, Weight = 50},
+                new Items {Value = 180, Weight = 60},
+                new Items {Value = 200, Weight = 70},
+            };
+
+            var result = KnapSack(items, capacity);
+
+            Console.WriteLine(result);
+            Console.ReadLine();
         }
 
         public static int KnapSack(Items[] items, int capacity)
